@@ -1,0 +1,85 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+    <link rel="stylesheet" href="node_modules/toastr/build/toastr.min.css">
+    <link rel="stylesheet" href="assets/css/myStyle.css">
+    <link rel="stylesheet" href="assets/css/categoryStyle.css">
+    <link rel="stylesheet" href="assets/css/user.css">
+
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/bootstrap/js/bootstarp.min.js"></script>
+    <script src="/node_modules/toastr/build/toastr.min.js"></script>
+    <script src="/assets/script.js"></script>
+    <script>
+        if (!localStorage.getItem('user')) {
+            window.location.href = '../../pages/login.html';
+        }
+
+    </script>
+    <title>Template Dashbord </title>
+</head>
+
+<body>
+
+    <div class="container-fluid ">
+        <div class="row">
+            <div id="mainMenu" class="col-md-2 bg-gradiant-1 full-height ">
+                <a href="home.html">
+                    <img class="logo-pic mr-5 " src="./assets/img/CircleLogo.png " title="داشبورد مدیریت">
+                </a>
+
+                <nav class=" mainMenuList">
+                    <a href="#" onclick="goToPage('داشبورد مدیریت','boss')">
+                        <i class="fa fa-chart-pie fa-fw "> </i>
+                        داشبورد
+                    </a>
+                    <a href="#" onclick="goToPage('    محصولات   ','product')">
+                        <i class="fa fa-cart-plus "> </i>
+                        محصولات
+                    </a>
+                    <a href="#" onclick="goToPage(' لیست محصولات ','categoriesWithToken')">
+                        <i class="fa fa-handshake fa-fw"></i>
+
+                        لیست محصولات
+                    </a>
+                    <a href="#" onclick="goToPage(' کاربران    ','user')">
+                        <i class="fa fa-users fa-fw "> </i>
+                        کاربران
+                    </a>
+                    <a href="#" onclick="goToPage(' کاربر جدبد    ','userInfo')">
+                        <i class="fa fa-user fa-fw "> </i>
+                        کاربر جدید
+                    </a>
+                    <a href="#" onclick="goToPage(' ورود به حساب کاربری    ','login')">
+                        <i class="fa fa-sign-in-alt fa-fw "> </i>
+                        ورود کاربر
+                    </a>
+
+                </nav>
+            </div>
+
+            <div class=" col bg-gradiant-2 full-height position-relative">
+                <h2 id="pageTitle" class="text-center text-white pt-3"> </h2>
+                <div class="row">
+                    <div class="col">
+                        <div id="mainContent"></div>
+                    </div>
+                </div>
+                <div id="menu-btn" onclick="showHideMenu(this)">
+                    <i class="fa fa-arrow-circle-right fa-2x"></i>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,91 @@
+<html lang="en">
+<link rel="stylesheet" href="../node_modules//bootstrap/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+<link rel="stylesheet" href="../assets/css/myStyle.css">
+<script src="../node_modules/jquery/dist/jquery.min.js"></script>
+<script src="../node_modules/bootstrap/js/bootstarp.min.js"></script>
+<script src="../assets/script.js"></script>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="imgcontainer">
+            <img src="../assets/img/img_avatar2.png" alt="Avatar" class="avatar">
+        </div>
+
+        <div class="formStyle ">
+            <div class="form-group m-2 p-2  ">
+                <div class="row">
+                    <div class="col-4 m-3">
+                        <label for=" "> نام کاربری:</label>
+                        <input class="form-control " type="text" id="uName" placeholder="Sample userName is ali">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4 m-3">
+                        <label for=""> رمز عبور: </label>
+                        <input class="form-control " type="password" id="pass" placeholder="Sample Password is 1234">
+                    </div>
+                    <div class="col-md-2 mt-5">
+                        <button onclick="showPass(this)"> <i class="fa fa-lock p-1 " title="نمایش رمز"> </i></button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4 m-3">
+                        <button class="btn btn-outline-primary " onclick="loginUser(this)"> ورود</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        const showPass = (element) => {
+            if ($('#pass').attr('type') == 'text') {
+                $('#pass').attr('type', 'password');
+                $(element).children().first().attr('class', 'fa fa-lock p-1');
+            } else {
+                $('#pass').attr('type', 'text');
+                $(element).children().first().attr('class', 'fa fa-lock-open p-1');
+
+
+            }
+
+        }
+
+        const loginUser = (element) => {
+            $(element).attr('disabled', 'disabled');
+            const uName = $('#uName').val();
+            const pass = $('#pass').val();
+
+            const apiUrl = `http://apitester.ir/api/Users/authenticate?userName=${uName}&password=${pass}`;
+
+            $.ajax({
+                url: apiUrl,
+                success: function (data) {
+                    window.location.href = '../home.html';
+                    localStorage.setItem('user', JSON.stringify(data));
+
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    $(element).removeAttr('disabled');
+                    alert('نام کاربری یا رمز عبور اشتباه است.')
+
+                }
+            });
+
+        }
+    </script>
+</body>
+
+
+
+</html>

@@ -1,0 +1,146 @@
+@font-face {
+    font-family: 'iransans';
+    src: url('../fonts/iransans_regular.woff2') format('woff2');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'iransans';
+    src: url('../fonts/iransans_regular.woff2') format('woff2');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'iransans';
+    src: url('../fonts/iransans_ultralight.woff2') format('woff2');
+    font-weight: 200;
+}
+
+
+body {
+    direction: rtl;
+    text-align: right;
+    font-family: 'iransans', tahoma;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+   
+    
+    
+}
+
+ html{
+    height: 100%;
+ }
+
+
+.full-height{
+    height: 100vh;
+}
+
+
+
+.bg-gradiant-1{
+    background:  #5abef0;
+}
+.bg-gradiant-2{
+    
+    background-color: rgba(86, 88, 228, 0.308);
+    background-image:
+      linear-gradient(
+        to right, 
+        rgba(68, 146, 247, 0.548), 
+        #205ab1bb, 
+        rgba(39, 30, 168, 0.678), 
+        rgba(80, 25, 182, 0.692)
+      );
+}
+
+.position-relative{
+    position: relative;
+}
+
+#menu-btn {
+    position: absolute;
+    top: .5rem;
+    right: .1rem;
+    cursor: pointer;
+    transition: 1s;
+}
+
+
+
+#menu-btn :hover{
+    background-color: #cc99ff;
+}
+
+#mainMenu{
+    
+    transition: .7s;
+}
+
+.logo-pic{
+    border-radius: 70%;
+    width: 5rem;
+    height: 5rem;
+    margin-left: 4rem;
+    padding-top: .5rem;
+}
+
+.mainMenuList{
+    padding-top: .5rem;
+    height: 100%;
+    
+}
+.mainMenuList>a {
+    display: block;
+    font-size: .9rem;
+    text-decoration: none;
+    padding-top: .8rem;
+    color: rgb(205, 239, 241);
+   padding-left: 3.5rem;
+}
+
+.mainMenuList>a:hover{
+    background-color: rgb(155, 204, 233);
+    transition: .4s;
+    border-radius: .3rem;
+}
+
+
+
+
+.my-card
+{
+    position:absolute;
+    left:40%;
+    top:-20px;
+    border-radius:50%;
+}
+
+
+
+
+
+img.avatar {
+    width: 20%;
+    border-radius: 50%;
+  }
+  
+  .container {
+    padding: 16px;
+  }
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+  }
+
+  .formStyle{
+    
+    margin-right: ;
+  }
+
+  .hide{
+      display: none;
+  }
+
